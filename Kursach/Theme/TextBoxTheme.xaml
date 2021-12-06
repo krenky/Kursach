@@ -19,7 +19,7 @@
                                      VerticalContentAlignment="Center"
                                      Padding="5"
                                      Foreground="#cfcfcf"
-                                     x:Name="Search"/>
+                                     x:Name="SearchBox"/>
 
                             <TextBlock IsHitTestVisible="False"
                                        Text="Search"

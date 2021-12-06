@@ -9,6 +9,6 @@ namespace Kursach.MVVM.Model
         public string Login { get; set; }
         public string Password { get; set; }
         public List<Contract> Contracts { get; set; }
-        public List<Client> Clients { get; set; }
+        //public List<Client> Clients { get; set; }
     }
 }

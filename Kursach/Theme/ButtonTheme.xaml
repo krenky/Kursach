@@ -33,14 +33,14 @@
                                                 <TranslateTransform X="0.02" Y="0.3"/>
                                             </TransformGroup>
                                         </RadialGradientBrush.RelativeTransform>
-                                        <GradientStop Color="#00000000" Offset="1"/>
+                                        <GradientStop Color="Coral" Offset="1"/>
                                         <GradientStop Color="#FF303030" Offset="0.3"/>
                                     </RadialGradientBrush>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FFC73E3E"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="grid" Value="0.25"/>

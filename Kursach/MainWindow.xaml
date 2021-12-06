@@ -42,19 +42,23 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
 
-                <RadioButton Content="Home1"
+                <RadioButton Content="Orders"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding OrdersViewCommand}"/>
 
-                <RadioButton Content="Home2"
+                <RadioButton Content="Clients"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ClientsViewCommand}"/>
 
                 <RadioButton Content="Home3"
                              Height="50"
@@ -74,7 +78,7 @@
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"
-                            Content="{Binding CuurentView}"/>
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>
