@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursach.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace Kursach.MVVM.View
         public HomeView()
         {
             InitializeComponent();
+            TextBlock_CountContracts.Text = MainWindow._context.Contracts
+                .Where(a => a.EngineerId == MainWindow._currentEngineer)
+                .ToList()
+                .Count()
+                .ToString();
+            Engineer engineer = MainWindow._context.Engineers.Where(a => a.Id == MainWindow._currentEngineer).FirstOrDefault();
+            if(engineer != null)
+                TextBlock_NameEngineer.Text = engineer.FullName;
+
         }
     }
 }

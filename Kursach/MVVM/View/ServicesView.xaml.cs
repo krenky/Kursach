@@ -1,5 +1,4 @@
-﻿using Kursach.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +17,19 @@ using System.Windows.Shapes;
 namespace Kursach.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для ClientsView.xaml
+    /// Логика взаимодействия для ServicesView.xaml
     /// </summary>
-    public partial class ClientsView : UserControl
+    public partial class ServicesView : UserControl
     {
-        public ClientsView()
+        public ServicesView()
         {
             InitializeComponent();
-            MainWindow._context.Clients.Load();
-            Datagrid_Clients.ItemsSource = MainWindow._context.Clients.Local.ToBindingList();
+
+            MainWindow._context.Services.Load();
+            Datagrid_Services.ItemsSource = MainWindow._context.Services.Local.ToBindingList();
         }
 
-        private void Datagrid_Clients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Datagrid_Services_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             MainWindow._context.SaveChanges();
         }

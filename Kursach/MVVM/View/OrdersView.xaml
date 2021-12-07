@@ -26,8 +26,10 @@
                 <DataGridTextColumn Binding="{Binding Id}"/>
                 <DataGridTextColumn Binding="{Binding Model}" Header="Модель" Width="100"/>
                 <DataGridTextColumn Binding="{Binding Description}" Header="Описание" Width="300"/>
-                <DataGridTextColumn Binding="{Binding Status}" Header="Статус" Width="100"/>
-                <DataGridTextColumn Binding="{Binding ClientId}" Header="Id клиента"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Стомиость"/>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Status" Header="Статус" SelectedItemBinding="{Binding Status}"/>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Clients" Header="Клиент" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Client}"/>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Engineer" Header="Инженер" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Engineer}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -49,6 +51,19 @@
                            Foreground="White"
                            FontSize="16"/>
             </Button>
+            
+            <ComboBox x:Name="Combobox_ServicesOrComponent" Height="30"
+                      Width="150"
+                      Margin="10" DropDownClosed="Combobox_ServicesOrComponent_DropDownClosed">
+                
+            </ComboBox>
+
+            <ComboBox x:Name="Combobox_ServicesComponent" Height="30"
+                      Width="150"
+                      Margin="10"
+                      DisplayMemberPath="Name">
+                
+            </ComboBox>
         </StackPanel>
     </StackPanel>
 </UserControl>

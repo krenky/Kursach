@@ -3,7 +3,7 @@ using Kursach.MVVM.Model;
 
 namespace Kursach.Context
 {
-    class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         public DbSet<Client> Clients { get; set; }
         public DbSet<Engineer> Engineers { get; set; }
@@ -14,6 +14,10 @@ namespace Kursach.Context
         {
             //Database.EnsureDeleted();
             Database.EnsureCreated();
+            //Services.AddRange(new Service { Name = "Замена дисплея", Price = 100 },
+            //    new Service { Name = "Замена аккамулятора", Price = 70 }, 
+            //    new Service { Name = "Диагностика", Price = 40},
+            //    new Service { Name = "Очистка памяти", Price = 30});
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

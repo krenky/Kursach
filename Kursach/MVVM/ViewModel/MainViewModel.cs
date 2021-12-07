@@ -12,10 +12,16 @@ namespace Kursach.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand OrdersViewCommand { get; set; }
         public RelayCommand ClientsViewCommand { get; set; }
+        public RelayCommand OptionsViewCommand { get; set; }
+        public RelayCommand ComponentsViewCommand { get; set; }
+        public RelayCommand ServicesViewCommand { get; set; }
 
         public HomeViewModel HomeVM { get; set; }
         public OrdersViewModel OrdersVM { get; set; }
         public ClientsViewModel ClientsVM { get; set; }
+        public OptionsViewModel OptionsVM { get; set; }
+        public ComponentsViewModel ComponentsVM { get; set; }
+        public ServicesViewModel ServicesVM { get; set; }
 
         private object _currentView;
 
@@ -24,6 +30,9 @@ namespace Kursach.MVVM.ViewModel
             HomeVM = new HomeViewModel();
             OrdersVM = new OrdersViewModel();
             ClientsVM = new ClientsViewModel();
+            OptionsVM = new OptionsViewModel();
+            ComponentsVM = new ComponentsViewModel();
+            ServicesVM = new ServicesViewModel();
             CurrentView = HomeVM;
 
             HomeViewCommand = new RelayCommand(o =>
@@ -39,6 +48,21 @@ namespace Kursach.MVVM.ViewModel
             ClientsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = ClientsVM;
+            });
+
+            OptionsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = OptionsVM;
+            });
+
+            ComponentsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ComponentsVM;
+            });
+
+            ServicesViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ServicesVM;
             });
         }
 

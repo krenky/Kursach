@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursach.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Kursach
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static int _currentEngineer = 0;
+        public static ApplicationContext _context;
         public MainWindow()
         {
             InitializeComponent();
+            _context = new ApplicationContext();
         }
     }
 }

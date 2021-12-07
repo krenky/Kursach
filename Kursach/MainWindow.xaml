@@ -16,7 +16,7 @@
         <viewModel:MainViewModel/>
     </Window.DataContext>
     
-    <Border Background="#272537"
+    <Border x:Name="Border_main" Background="#272537"
             CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -60,11 +60,26 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding ClientsViewCommand}"/>
 
-                <RadioButton Content="Home3"
+                <RadioButton Content="Components"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ComponentsViewCommand}"/>
+
+                <RadioButton Content="Services"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ServicesViewCommand}"/>
+
+                <RadioButton Content="Options"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding OptionsViewCommand}"/>
             </StackPanel>
 
             <TextBox Width="250"

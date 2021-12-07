@@ -7,7 +7,7 @@ namespace Kursach.MVVM.Model
         public int Id { get; set; }
         public string FullName { get; set; }
         public string Login { get; set; }
-        public string Password { get; set; }
+        public string? Password { get; set; }
         public List<Contract> Contracts { get; set; }
         //public List<Client> Clients { get; set; }
     }
