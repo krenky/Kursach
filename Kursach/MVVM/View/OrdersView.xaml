@@ -46,7 +46,7 @@
             </Button>
             <Button x:Name="Button_DeleteContract" Width="90"
                     Height="45"
-                    Style="{StaticResource RoundCorner}">
+                    Style="{StaticResource RoundCorner}" Click="Button_DeleteContract_Click">
                 <TextBlock Text="Delete"
                            Foreground="White"
                            FontSize="16"/>

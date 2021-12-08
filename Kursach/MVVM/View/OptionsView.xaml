@@ -33,11 +33,11 @@
                  HorizontalAlignment="Left"
                  Margin="30,10,0,0"/>
         <StackPanel>
-            <Button x:Name="Button_AddContract" Width="90"
+            <Button x:Name="Button_AddEngineer" Width="90"
                     Height="45"
                     HorizontalAlignment="Left"
                     Margin="30"
-                    Style="{StaticResource RoundCorner}" Click="Button_AddContract_Click">
+                    Style="{StaticResource RoundCorner}" Click="Button_AddEngineer_Click">
                 <TextBlock Text="Add"
                            Foreground="White"
                            FontSize="16"/>

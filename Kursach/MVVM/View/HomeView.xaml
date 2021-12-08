@@ -46,7 +46,7 @@
 
             <Border x:Name="Border_Contracts" Width="200"
                     Height="200"
-                    Margin="45,0,0,0"
+                    Margin="45,0,0,20"
                     CornerRadius="10">
 
 
@@ -75,7 +75,7 @@
 
         <StackPanel>
 
-            <TextBlock Text="Quik Command"
+            <TextBlock Text="Info"
                        Foreground="White"
                        FontSize="20"
                        HorizontalAlignment="Left"
@@ -83,49 +83,64 @@
 
             <StackPanel Orientation="Horizontal">
 
-                <Button x:Name="Button_AddClient"
-                        Width="150"
-                        Height="150"
-                        Background="Coral"
-                        Style="{StaticResource RoundCorner}"
-                        Margin="0,0,0,0">
-                    <TextBlock Text="Добавить клиента"
-                               Foreground="White"
-                               FontSize="16"/>
-                </Button>
+                <Border x:Name="Border_Components"
+                         Width="150"
+                    Height="150"
+                    Margin="45,0,0,20"
+                    CornerRadius="10">
 
-                <Button x:Name="Button_AddContract"
-                        Width="150"
-                        Height="150"
-                        Background="Coral"
-                        Style="{StaticResource RoundCorner}"
-                        Margin="15,0,0,0">
-                    <TextBlock Text="Добавить контракт"
-                               Foreground="White"
-                               FontSize="16"/>
-                </Button>
 
-                <Button x:Name="Button_ChangeContract"
-                        Width="150"
-                        Height="150"
-                        Background="Coral"
-                        Style="{StaticResource RoundCorner}"
-                        Margin="15,0,0,0">
-                    <TextBlock Text="Изменить контракт"
-                               Foreground="White"
-                               FontSize="16"/>
-                </Button>
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                            <GradientStop Color="Coral" Offset="0.0"/>
+                            <GradientStop Color="BlueViolet" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
 
-                <Button x:Name="Button_ChangeStatus"
-                        Width="150"
-                        Height="150"
-                        Background="Coral"
-                        Style="{StaticResource RoundCorner}"
-                        Margin="15,0,0,0">
-                    <TextBlock Text="Изменить статус"
-                               Foreground="White"
-                               FontSize="16"/>
-                </Button>
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="Компонентов"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,10"/>
+
+                            <TextBlock x:Name="TextBlock_Components" Text="Кол-во"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   Margin="20,10,10,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border x:Name="Border_money"
+                         Width="150"
+                    Height="150"
+                    Margin="45,0,0,20"
+                    CornerRadius="10">
+
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                            <GradientStop Color="Coral" Offset="0.0"/>
+                            <GradientStop Color="BlueViolet" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="Прибыль"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,10"/>
+
+                            <TextBlock x:Name="TextBlock_Money" Text="Кол-во"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   Margin="20,10,10,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
             </StackPanel>
         </StackPanel>
     </StackPanel>

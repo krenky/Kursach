@@ -1,18 +1,7 @@
 ﻿using Kursach.MVVM.Model;
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Kursach.MVVM.View
 {
@@ -25,6 +14,12 @@ namespace Kursach.MVVM.View
         {
             InitializeComponent();
             TextBlock_CountContracts.Text = MainWindow._context.Contracts
+                .Where(a => a.Status == "В работе")
+                .Where(a => a.EngineerId == MainWindow._currentEngineer)
+                .ToList()
+                .Count()
+                .ToString();
+            TextBlock_CountAllContracts.Text = "Кол-во заказов: " + MainWindow._context.Contracts
                 .Where(a => a.EngineerId == MainWindow._currentEngineer)
                 .ToList()
                 .Count()
@@ -32,7 +27,13 @@ namespace Kursach.MVVM.View
             Engineer engineer = MainWindow._context.Engineers.Where(a => a.Id == MainWindow._currentEngineer).FirstOrDefault();
             if(engineer != null)
                 TextBlock_NameEngineer.Text = engineer.FullName;
-
+            TextBlock_Components.Text = MainWindow._context.Components.Count().ToString();
+            TextBlock_Money.Text = MainWindow._context.Contracts
+                .Include(a => a.Components)
+                .Include(a => a.Services)
+                .Where(a => a.Status == "Готово")
+                .ToList<Contract>()
+                .Sum(a => a.Price).ToString();
         }
     }
 }

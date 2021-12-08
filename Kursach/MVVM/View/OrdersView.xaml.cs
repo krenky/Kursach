@@ -1,20 +1,9 @@
-﻿using Kursach.Context;
-using Kursach.MVVM.Model;
+﻿using Kursach.MVVM.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Kursach.MVVM.View
 {
@@ -91,6 +80,22 @@ namespace Kursach.MVVM.View
                 MainWindow._context.Components.Load();
                 Combobox_ServicesComponent.ItemsSource = MainWindow._context.Components.Local.ToBindingList();
             }
+        }
+
+        private void Button_DeleteContract_Click(object sender, RoutedEventArgs e)
+        {
+            Contract contract = (Contract)Datagrid_Contract.SelectedItem;
+            contract = MainWindow._context.Contracts.Find(contract.Id);
+            if ((string)Combobox_ServicesOrComponent.SelectedItem == "Services")
+            {
+                contract.Services.Remove(Combobox_ServicesComponent.SelectedItem as Service);
+            }
+
+            if ((string)Combobox_ServicesOrComponent.SelectedItem == "Component")
+            {
+                contract.Components.Remove(Combobox_ServicesComponent.SelectedItem as Component);
+            }
+            MainWindow._context.SaveChanges();
         }
     }
 }
