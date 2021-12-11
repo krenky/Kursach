@@ -56,6 +56,10 @@ namespace Kursach.MVVM.View
             try
             {
                 MainWindow._context.SaveChanges();
+                Contract contract = Datagrid_Contract.SelectedItem as Contract;
+
+                TextBlock_Day.Text = contract == null ? "0":((int)contract.DateLeft.TotalDays).ToString();
+
             }
             catch(Exception ex)
             {
@@ -63,7 +67,7 @@ namespace Kursach.MVVM.View
             }
             finally
             {
-
+                
             }
             
         }

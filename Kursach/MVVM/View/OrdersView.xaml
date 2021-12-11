@@ -24,12 +24,25 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}"/>
-                <DataGridTextColumn Binding="{Binding Model}" Header="Модель" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Description}" Header="Описание" Width="300"/>
-                <DataGridTextColumn Binding="{Binding Price}" Header="Стомиость"/>
-                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Status" Header="Статус" SelectedItemBinding="{Binding Status}"/>
-                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Clients" Header="Клиент" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Client}"/>
-                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Engineer" Header="Инженер" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Engineer}"/>
+                <DataGridTextColumn Binding="{Binding Model, UpdateSourceTrigger=Default}" Header="Модель" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Description, UpdateSourceTrigger=Default}" Header="Описание" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Price, UpdateSourceTrigger=Default}" Header="Стомиость"/>
+                
+                <DataGridTemplateColumn Header="Сдача">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DateLimitation}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DateLimitation, UpdateSourceTrigger=Default}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Status" Header="Статус" SelectedItemBinding="{Binding Status, UpdateSourceTrigger=Default}"/>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Clients" Header="Клиент" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Client, UpdateSourceTrigger=Default}"/>
+                <DataGridComboBoxColumn x:Name="DataGrid_ComboBox_Engineer" Header="Инженер" DisplayMemberPath="FullName" SelectedItemBinding="{Binding Engineer, UpdateSourceTrigger=Default}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -64,6 +77,35 @@
                       DisplayMemberPath="Name">
                 
             </ComboBox>
+
+            <Border x:Name="Border_Day"
+                         Width="150"
+                    Height="75"
+                    Margin="10,0,0,20"
+                    CornerRadius="10">
+
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                        <GradientStop Color="Coral" Offset="0.0"/>
+                        <GradientStop Color="BlueViolet" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Осталось дней"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,10"/>
+
+                        <TextBlock x:Name="TextBlock_Day" Text="Кол-во"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   Margin="20,10,10,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </StackPanel>
     </StackPanel>
 </UserControl>

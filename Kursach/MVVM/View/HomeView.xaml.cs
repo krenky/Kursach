@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Windows.Controls;
+using System;
 
 namespace Kursach.MVVM.View
 {
@@ -34,6 +35,8 @@ namespace Kursach.MVVM.View
                 .Where(a => a.Status == "Готово")
                 .ToList<Contract>()
                 .Sum(a => a.Price).ToString();
+            TimeSpan timeSpan = new TimeSpan(2, 0, 0, 0);
+            TextBlock_UrgentContracts.Text = MainWindow._context.Contracts.ToList().Where(a => a.DateLeft < timeSpan).Where(a => a.Status == "В работе").ToList().Count.ToString();
         }
     }
 }

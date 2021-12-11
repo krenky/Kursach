@@ -141,6 +141,35 @@
                     </Grid>
                 </Border>
 
+                <Border x:Name="Border_UrgentContracts"
+                         Width="150"
+                    Height="150"
+                    Margin="45,0,0,20"
+                    CornerRadius="10">
+
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                            <GradientStop Color="Coral" Offset="0.0"/>
+                            <GradientStop Color="BlueViolet" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock Text="Срочные заказы"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,10"/>
+
+                            <TextBlock x:Name="TextBlock_UrgentContracts" Text="Кол-во"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   Margin="20,10,10,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
             </StackPanel>
         </StackPanel>
     </StackPanel>
