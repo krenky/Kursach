@@ -23,7 +23,7 @@
             </DataGrid.Clip>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}"/>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id"/>
                 <DataGridTextColumn Binding="{Binding Model, UpdateSourceTrigger=Default}" Header="Модель" Width="100"/>
                 <DataGridTextColumn Binding="{Binding Description, UpdateSourceTrigger=Default}" Header="Описание" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Price, UpdateSourceTrigger=Default}" Header="Стомиость"/>
